@@ -27,3 +27,4 @@ Route::get('order/paystatus','OrderController@paystatus');
 //微信支付
 Route::get('weixin/test/{oid}','WxPayController@test');
 Route::get('weixin/paysuccess','WxPayController@paysuccess');
+Route::post('pay/notice','WxPayController@notice');
