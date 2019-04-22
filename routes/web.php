@@ -24,6 +24,8 @@ Route::get('cart/add/{goods_id?}','CartController@add');
 Route::get('order/add','OrderController@add');
 Route::get('order/list','OrderController@order_list');
 Route::get('order/paystatus','OrderController@paystatus');
+Route::get('goods/list','GoodsController@list');
+Route::get('goods/detail/{id}','GoodsController@detail');
 //微信支付
 Route::get('weixin/test/{oid}','WxPayController@test');
 Route::get('weixin/paysuccess','WxPayController@paysuccess');
