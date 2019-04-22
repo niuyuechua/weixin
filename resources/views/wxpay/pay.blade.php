@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>4.19shop</title>
+        <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -80,8 +80,8 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    weixinPay
+                <div class="title m-b-md" id="qrcode">
+{{--                   {{$code_url}}--}}
                 </div>
 
                 <div class="links">
@@ -95,5 +95,25 @@
                 </div>
             </div>
         </div>
+        <script src="/js/jquery/jquery-3.1.1.min.js"></script>
+        <script src="/js/weixin/qrcode.js"></script>
+        <script type="text/javascript">
+            new QRCode(document.getElementById("qrcode"), "{{$code_url}}");
+
+            //ajax轮询，检查订单支付状态
+            setInterval(function(){
+                $.ajax({
+                    url:'/order/paystatus?oid='+"{{$oid}}",
+                    type:'get',
+                    dataType:'json',
+                    success:function(res){
+                        if(res.status==1){
+                            //alert('支付成功');
+                            location.href="/weixin/paysuccess?oid={{$oid}}";
+                        }
+                    }
+                });
+            },3000)
+        </script>
     </body>
 </html>
