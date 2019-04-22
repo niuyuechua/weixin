@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 class OrderModel extends Model
 {
     protected $table = 'order';
-    public $timestamps = 'false';
+    public $timestamps = false;
     protected $primaryKey='oid';
 
     //生成订单编号
