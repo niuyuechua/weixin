@@ -14,6 +14,7 @@ class JssdkController extends Controller
         $nonceStr=Str::random(10);
         $timestamp=time();
         $current_url=$_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+        //echo $current_url;die;
         //生成签名
         $string1="jsapi_ticket=$ticket&noncestr=$nonceStr&timestamp=$timestamp&url=$current_url";
         //echo $string1;die;
@@ -32,4 +33,7 @@ class JssdkController extends Controller
         return view('jssdk.img',$data);
     }
 
+    public function getImg(){
+        echo '<pre>';print_r($_GET);echo '</pre>';
+    }
 }
