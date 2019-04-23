@@ -30,3 +30,9 @@ Route::get('goods/detail/{id}','GoodsController@detail');
 Route::get('weixin/test/{oid}','WxPayController@test');
 Route::get('weixin/paysuccess','WxPayController@paysuccess');
 Route::post('pay/notice','WxPayController@notice');
+
+Route::get('goods/getSort','GoodsController@getSort');
+Route::get('goods/getSeeSort','GoodsController@getSeeSort');
+
+//JSSDK
+Route::get('jssdk/getConfig','JssdkController@getConfig');

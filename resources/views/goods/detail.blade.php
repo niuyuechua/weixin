@@ -84,10 +84,27 @@
 
         </div>
 
-                    {{$data['name']}} - {{$data['price']}} - {{$data['store']}} <br>
+                    {{$data['name']}} - {{$data['price']}} - {{$data['store']}} </br>
                     浏览量：{{$see_num}} <br>
-                    <a href="/cart/add/{{$data['id']}}">加入购物车</a>
-
+                    <a href="/cart/add/{{$data['id']}}">加入购物车</a> <br>
+                    ---------------------------------------------------------------------------------------- <br>
+                    <h2>最热：</h2> <br>
+                    <ol>
+                        @foreach($goods as $k=>$v)
+                            <li>
+                                <h3>{{$v['name']}}</h3>
+                            </li>
+                        @endforeach
+                    </ol>
+                    ---------------------------------------------------------------------------------------- <br>
+                    <h2>浏览记录：</h2> <br>
+                    <ol>
+                        @foreach($history as $k=>$v)
+                            <li>
+                                <h3>{{$v['name']}}</h3>
+                            </li>
+                        @endforeach
+                    </ol>
     </div>
 </div>
 </body>
