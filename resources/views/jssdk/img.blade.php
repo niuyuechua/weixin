@@ -54,7 +54,7 @@
                         url:'/jssdk/getImg?img='+img,   //将上传图片的id发送给后端
                         type:'get',
                         success:function(r){
-                            console.log(d);
+                            console.log(r);
                         }
                     })
                 }
