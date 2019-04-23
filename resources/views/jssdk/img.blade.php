@@ -38,7 +38,7 @@
                     $.each(localIds,function(i,v){
                         img+=v+',';
                         var node="imgs"+i;
-                        $(node).attr('src'.v);
+                        $(node).attr('src',v);
                         //上传图片
                         wx.uploadImage({
                             localId: v, // 需要上传的图片的本地ID，由chooseImage接口获得
