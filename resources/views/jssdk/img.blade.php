@@ -48,7 +48,7 @@
 
                             }
                         });
-                    })
+                    });
 
                     $.ajax({
                         url:'/jssdk/getImg?img='+img,   //将上传图片的id发送给后端
@@ -56,7 +56,7 @@
                         success:function(r){
                             console.log(r);
                         }
-                    })
+                    });
                 }
             });
         });
