@@ -26,7 +26,8 @@
     });
 
     wx.ready(function(){
-        $("#btn1").click(function(){
+
+        $('#btn1').click(function(){
             //从相册选择图片
             wx.chooseImage({
                 count: 3, // 默认9
