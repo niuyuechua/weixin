@@ -39,7 +39,7 @@
                     var img="";
                     $.each(localIds,function(i,v){
                         img+=v+',';
-                        var node="imgs"+i;
+                        var node="#imgs"+i;
                         $(node).attr('src',v);
                         //上传图片
                         wx.uploadImage({
