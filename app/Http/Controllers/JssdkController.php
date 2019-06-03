@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 
 class JssdkController extends Controller
 {
+    //获取权限验证配置信息
     public function getConfig(){
         //获取生成签名的参数
         $ticket=getTicket();

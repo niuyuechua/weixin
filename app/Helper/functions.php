@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Redis;
             }
         }
     }
-
+    //获取生成签名的参数
     function getTicket(){
         $key="wx_jsapi_ticket";
         $ticket=Redis::get($key);

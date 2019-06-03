@@ -17,6 +17,7 @@ class CartController extends Controller
         if($cart_list){
             $cart_list=$cart_list->toArray();
             //echo '<pre>';print_r($cart_list);echo '<pre>';
+            $goods_list=[];
             foreach($cart_list as $k=>$v){
                 $goods_list[]=GoodsModel::where(['id'=>$v['goods_id']])->first()->toArray();
             }
